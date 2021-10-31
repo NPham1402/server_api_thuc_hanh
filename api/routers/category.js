@@ -7,7 +7,7 @@ const getalldata =async (req, res, next) => {
   const snapshot=await users.get();
   const array=[]
   if(snapshot.empty)
-  {res.status(400).send({message:"Khong co du lieu"})}
+  {res.status(404).send({message:"Khong co du lieu"})}
   else{
   snapshot.forEach(doc => {
     var element={}
@@ -20,7 +20,7 @@ const getalldata =async (req, res, next) => {
   })
    }
    console.log(array)
-   res.status(200).json(array)
+   res.status(200).send(array)
   }
    router.get("/",getalldata)
 module.exports=router;

@@ -48,6 +48,9 @@ const getalldata =async (req, res, next) => {
    console.log(array)
    res.status(200).send(array)
   }
+app.get('/',(req, res) => {
+  res.status(200).send("zkvjihresithbetsj")
+})
 app.get("/api/2",getalldata2)
 app.get("/api/1",getalldata)
 app.listen(port,()=>{

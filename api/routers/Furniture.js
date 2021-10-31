@@ -8,7 +8,7 @@ const users= await db.collection('Furniture')
 const snapshot=await users.get();
 const array=[]
 if(snapshot.empty)
-{res.status(400).send({message:"Khong co du lieu"})}
+{res.status(404).send({message:"Khong co du lieu"})}
 else{
 snapshot.forEach(doc => {
   var element={}

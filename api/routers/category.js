@@ -1,19 +1,18 @@
 const express = require("express");
 const router = express.Router();
-const admin= require("./database.js");
+const admin= require("./database");
 const db=admin.firestore();
 const getalldata =async (req, res, next) => {
   const users= await db.collection('category')
   const snapshot=await users.get();
   const array=[]
   if(snapshot.empty)
-  {res.status(404).send({message:"Khong co du lieu"})}
+  {res.status(404).send({message:"Khong co d lieu"})}
   else{
   snapshot.forEach(doc => {
     var element={}
     element.id=doc.id
-    element.name=doc.data().name
-    element.img=doc.data().img
+    element.
     element.arraylist=doc.data().arraylist
   //  console.log(element)
    array.push(element)

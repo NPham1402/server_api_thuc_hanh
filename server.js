@@ -49,7 +49,7 @@ const getalldata =async (req, res, next) => {
    res.status(200).send(array)
   }
 app.get('/',(req, res) => {
-  res.status(200).send("zkvjihresithbetsj")
+  res.status(200).send("connected")
 })
 app.get("/api/2",getalldata2)
 app.get("/api/1",getalldata)

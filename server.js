@@ -12,12 +12,13 @@ const getalldata2 =async (req, res, next) => {
   {res.status(404).send({message:"Khong co d lieu"})}
   else{
   snapshot.forEach(doc => {
-    var element={}
-    element.id=doc.id
-    element.
-    element.arraylist=doc.data().arraylist
+    var chiaphan={}
+    chiaphan.id=doc.id
+    chiaphan.img=doc.data().img
+    chiaphan.name=doc.data().name
+    chiaphan.arraylist=doc.data().arraylist
   //  console.log(element)
-   array.push(element)
+   array.push(chiaphan)
   })
    }
    console.log(array)
@@ -26,23 +27,17 @@ const getalldata2 =async (req, res, next) => {
 const getalldata =async (req, res, next) => {
   const users= await db.collection('Furniture')
   const snapshot=await users.get();
-  const array1=[5]
-  const array=[]
+  var array=[]
   if(snapshot.empty)
   {res.status(404).send({message:"Khong co du lieu"})}
   else{
   snapshot.forEach(doc => {
-    var element2=[]
-    element2.name=doc.data().name
-    element2.img=doc.data().img
-    element2.description=doc.data().description
-    var element={}
-    element.id=[]
-    element.id=doc.id
-    element.chitiet=[]
-    element.chitiet.push([element2.name,element2.description,element2.img])
-  //  console.log(element)
-   array.push(element)
+    var chiaphan={}
+    chiaphan.id=doc.id
+    chiaphan.description=doc.data().description
+    chiaphan.img=doc.data().img
+    chiaphan.name=doc.data().name
+   array.push(chiaphan)
   })
    }
    console.log(array)

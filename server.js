@@ -46,8 +46,8 @@ const getalldata =async (req, res, next) => {
 app.get('/',(req, res) => {
   res.status(200).send("connected")
 })
-app.get("/api/2",getalldata2)
-app.get("/api/1",getalldata)
+app.get("/api/category",getalldata2)
+app.get("/api/furniture",getalldata)
 app.listen(port,()=>{
   console.log("Turn on server");
 })

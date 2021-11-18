@@ -41,7 +41,8 @@ const getalldata =async (req, res, next) => {
   })
    }
    console.log(array)
-   res.status(200).send(array)
+   var chia={ array}
+   res.status(200).send(chia)
   }
 app.get('/',(req, res) => {
   res.status(200).send("connected")
